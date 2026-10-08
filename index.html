@@ -4,17 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATESEG - Sistemas de Seguridad Contra Incendios</title>
-    <!-- Fuentes de Google Fonts: Montserrat (Texto) y Oswald (Títulos) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-    
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #e5e5e5;
@@ -32,8 +24,6 @@
             padding: 30px 25px;
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.12);
         }
-
-        /* Encabezado Principal con Logo */
         header {
             text-align: center;
             padding: 20px 10px;
@@ -41,38 +31,12 @@
             background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
             border-radius: 10px;
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-        .main-logo {
-            width: 100%;
-            max-width: 380px;
-            height: auto;
-            margin-bottom: 12px;
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            color: #ffffff;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        p.subtitle {
-            font-size: 1rem;
-            color: #dddddd;
-        }
-        p.slogan {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #ff3333;
-            margin-top: 8px;
-            text-transform: uppercase;
-        }
-
-        /* Títulos de sección */
+        .main-logo { width: 100%; max-width: 380px; height: auto; margin-bottom: 12px; background-color: #ffffff; padding: 10px; border-radius: 8px; }
+        h1 { font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; margin-bottom: 5px; }
+        p.subtitle { font-size: 1rem; color: #dddddd; }
+        p.slogan { font-size: 1.05rem; font-weight: 700; color: #ff3333; margin-top: 8px; text-transform: uppercase; }
+        
         h2.section-title {
             font-family: 'Oswald', sans-serif;
             color: #cc0000;
@@ -82,83 +46,19 @@
             text-transform: uppercase;
             border-bottom: 2px solid #eeeeee;
             padding-bottom: 8px;
-            letter-spacing: 0.5px;
         }
+        .contact-section { background-color: #f9f9f9; border: 1px solid #e0e0e0; border-left: 5px solid #cc0000; border-radius: 8px; padding: 20px; margin-bottom: 25px; text-align: center; }
+        .contact-buttons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 15px; }
+        .btn-contact { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 15px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; color: #ffffff; }
+        .btn-whatsapp { background-color: #25d366; }
+        .btn-call { background-color: #cc0000; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
-        /* Sección de Canales de Contacto */
-        .contact-section {
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-left: 5px solid #cc0000;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .contact-buttons-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-        .btn-contact {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 15px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            color: #ffffff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .btn-contact:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: #ffffff;
-        }
-        .btn-call {
-            background-color: #cc0000;
-            color: #ffffff;
-        }
-        .btn-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: #ffffff;
-        }
+        .search-box { margin-bottom: 25px; text-align: center; }
+        .search-box input { width: 100%; max-width: 500px; padding: 12px 16px; font-size: 0.95rem; border: 2px solid #dddddd; border-radius: 8px; outline: none; }
+        .search-box input:focus { border-color: #cc0000; }
 
-        /* Buscador */
-        .search-box {
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .search-box input {
-            width: 100%;
-            max-width: 500px;
-            padding: 12px 16px;
-            font-size: 0.95rem;
-            font-family: 'Montserrat', sans-serif;
-            border: 2px solid #dddddd;
-            border-radius: 8px;
-            background-color: #ffffff;
-            color: #333333;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        .search-box input:focus {
-            border-color: #cc0000;
-        }
-
-        /* Grid de Trabajadores */
-        .workers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 20px;
-        }
+        .workers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
         .worker-card {
             background-color: #ffffff;
             border: 1px solid #e0e0e0;
@@ -166,148 +66,37 @@
             border-radius: 8px;
             padding: 18px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .worker-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-        .worker-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 12px;
-        }
-        .worker-avatar {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            border: 2px solid #cc0000;
-            object-fit: cover;
-            background-color: #f0f0f0;
-        }
-        .worker-card h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.15rem;
-            color: #111111;
-            margin-bottom: 2px;
-            text-transform: uppercase;
-        }
-        .worker-card p.role {
-            color: #cc0000;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .worker-details {
-            border-top: 1px solid #f0f0f0;
-            padding-top: 10px;
-            font-size: 0.9rem;
-            color: #555555;
-        }
-        .worker-details p {
-            margin-bottom: 4px;
-        }
-        .badges-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            margin-top: 6px;
-        }
-        .worker-card span.badge {
-            display: inline-block;
-            background-color: #fff0f0;
-            color: #cc0000;
-            border: 1px solid #ffcccc;
-            padding: 3px 8px;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        .badge-status {
-            background-color: #e8f5e9 !important;
-            color: #2e7d32 !important;
-            border-color: #a5d6a7 !important;
-        }
-        .badge-authorized {
-            background-color: #e3f2fd !important;
-            color: #1565c0 !important;
-            border-color: #90caf9 !important;
-        }
+        .worker-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+        .worker-avatar { width: 75px; height: 75px; border-radius: 50%; border: 2px solid #cc0000; object-fit: cover; background-color: #f0f0f0; }
+        .worker-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.15rem; color: #111111; margin-bottom: 2px; text-transform: uppercase; }
+        .worker-card p.role { color: #cc0000; font-weight: 600; font-size: 0.9rem; }
+        .worker-details { border-top: 1px solid #f0f0f0; padding-top: 10px; font-size: 0.9rem; color: #555555; }
+        .worker-details p { margin-bottom: 4px; }
+        
+        .badges-wrapper { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
+        .badge { display: inline-block; padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; font-weight: 600; }
+        .badge-status-activo { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+        .badge-status-inactivo { background-color: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
+        .badge-area { background-color: #fff0f0; color: #cc0000; border: 1px solid #ffcccc; }
+        .badge-authorized { background-color: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
 
-        /* Botón PDF */
-        .btn-pdf {
-            display: block;
-            margin-top: 12px;
-            text-align: center;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: background-color 0.2s ease;
-        }
-        .btn-pdf:hover {
-            background-color: #cc0000;
-        }
+        .btn-pdf { display: block; margin-top: 12px; text-align: center; background-color: #1a1a1a; color: #ffffff; text-decoration: none; padding: 8px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: 600; }
+        .btn-pdf:hover { background-color: #cc0000; }
 
-        /* Ubicación */
-        .location-section {
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-left: 5px solid #cc0000;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .location-info {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            color: #333333;
-        }
-        .map-container {
-            width: 100%;
-            height: 280px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            border: 1px solid #dddddd;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .btn-location {
-            display: inline-block;
-            background-color: #cc0000;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777777;
-            border-top: 1px solid #eeeeee;
-            padding-top: 15px;
-        }
+        .location-section { background-color: #f9f9f9; border: 1px solid #e0e0e0; border-left: 5px solid #cc0000; border-radius: 8px; padding: 20px; margin-top: 20px; text-align: center; }
+        .map-container { width: 100%; height: 280px; border-radius: 8px; overflow: hidden; margin: 15px 0; border: 1px solid #dddddd; }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+        .btn-location { display: inline-block; background-color: #cc0000; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; }
+        footer { margin-top: 30px; text-align: center; font-size: 0.85rem; color: #777777; border-top: 1px solid #eeeeee; padding-top: 15px; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Encabezado con Logo -->
         <header>
             <img src="logo-ateseg.jpg" alt="Logo ATESEG" class="main-logo">
             <h1>SISTEMAS DE SEGURIDAD CONTRA INCENDIOS</h1>
@@ -315,316 +104,86 @@
             <p class="slogan">"Tu seguridad es nuestra prioridad"</p>
         </header>
 
-        <!-- Canales de Atención -->
         <h2 class="section-title">Canales de Atención</h2>
         <div class="contact-section">
             <p>Comunícate con nuestro equipo o visítanos en nuestras redes oficiales:</p>
             <div class="contact-buttons-grid">
-                <a href="https://www.instagram.com/atesegsd/" target="_blank" class="btn-contact btn-instagram">
-                    📸 Instagram (@atesegsd)
-                </a>
-                <a href="https://wa.me/593988257080" target="_blank" class="btn-contact btn-whatsapp">
-                    💬 WhatsApp (0988257080)
-                </a>
-                <a href="https://wa.me/593980677550" target="_blank" class="btn-contact btn-whatsapp">
-                    💬 WhatsApp (0980677550)
-                </a>
-                <a href="tel:0988257080" class="btn-contact btn-call">
-                    📞 Llamada Directa
-                </a>
+                <a href="https://www.instagram.com/atesegsd/" target="_blank" class="btn-contact btn-instagram">📸 Instagram (@atesegsd)</a>
+                <a href="https://wa.me/593988257080" target="_blank" class="btn-contact btn-whatsapp">💬 WhatsApp (0988257080)</a>
+                <a href="https://wa.me/593980677550" target="_blank" class="btn-contact btn-whatsapp">💬 WhatsApp (0980677550)</a>
+                <a href="tel:0988257080" class="btn-contact btn-call">📞 Llamada Directa</a>
             </div>
         </div>
 
-        <!-- Directorio de Personal -->
         <h2 class="section-title">Directorio de Trabajadores</h2>
 
-        <!-- Buscador -->
         <div class="search-box">
             <input type="text" id="searchInput" onkeyup="filterWorkers()" placeholder="Buscar por nombre, cargo o área...">
         </div>
 
-        <!-- Listado -->
-        <div class="workers-grid" id="workersList">
+        <div class="workers-grid" id="workersList"></div>
 
-            <!-- MARLON TAPIA -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="MARLON TAPIA" class="worker-avatar">
-                        <div>
-                            <h3>MARLON TAPIA</h3>
-                            <p class="role">GERENTE</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 65 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: OWNER</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/marlon-tapia.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- JAVIER VELEZ -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="JAVIER VELEZ" class="worker-avatar">
-                        <div>
-                            <h3>JAVIER VELEZ</h3>
-                            <p class="role">OPERADOR</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 42 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: INSTALADOR</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/javier-velez.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- YOLANDA REYES -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="YOLANDA REYES" class="worker-avatar">
-                        <div>
-                            <h3>YOLANDA REYES</h3>
-                            <p class="role">GERENTE</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 37 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge">ÁREA: ADMINISTRACIÓN</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/yolanda-reyes.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- EDUARDO CELI -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="EDUARDO CELI" class="worker-avatar">
-                        <div>
-                            <h3>EDUARDO CELI</h3>
-                            <p class="role">ASESOR COMERCIAL</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 35 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge">ÁREA: VENTAS</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/eduardo-celi.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- RAFAEL VELIZ -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="RAFAEL VELIZ" class="worker-avatar">
-                        <div>
-                            <h3>RAFAEL VELIZ</h3>
-                            <p class="role">TÉCNICO INSTALADOR</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 33 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: OPERADOR</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/rafael-veliz.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- ALFONSO TAPIA -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="ALFONSO TAPIA" class="worker-avatar">
-                        <div>
-                            <h3>ALFONSO TAPIA</h3>
-                            <p class="role">TÉCNICO INSTALADOR</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 26 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: OPERADOR</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/alfonso-tapia.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- LINCOLN FAJARDO -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="LINCOLN FAJARDO" class="worker-avatar">
-                        <div>
-                            <h3>LINCOLN FAJARDO</h3>
-                            <p class="role">MARKETING</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 25 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge">ÁREA: ADMINISTRACIÓN</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/lincoln-fajardo.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- KEVIN AULAR -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="KEVIN AULAR" class="worker-avatar">
-                        <div>
-                            <h3>KEVIN AULAR</h3>
-                            <p class="role">OPERADOR</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 25 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: INSTALADOR</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/kevin-aular.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- LEONELA LUCIO -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="LEONELA LUCIO" class="worker-avatar">
-                        <div>
-                            <h3>LEONELA LUCIO</h3>
-                            <p class="role">AUX. ADMINISTRACIÓN</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 22 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge">ÁREA: ADMINISTRACIÓN</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/leonela-lucio.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- ANDRES PERALTA -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="ANDRES.png" alt="ANDRES PERALTA" class="worker-avatar" onerror="this.src='logo-ateseg.jpg'">
-                        <div>
-                            <h3>ANDRES PERALTA</h3>
-                            <p class="role">OPERADOR</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 20 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: INSTALADOR</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/andres-peralta.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-            <!-- JHONATHAN VARGAS -->
-            <div class="worker-card">
-                <div>
-                    <div class="worker-header">
-                        <img src="logo-ateseg.jpg" alt="JHONATHAN VARGAS" class="worker-avatar">
-                        <div>
-                            <h3>JHONATHAN VARGAS</h3>
-                            <p class="role">OPERADOR</p>
-                        </div>
-                    </div>
-                    <div class="worker-details">
-                        <p><strong>Edad:</strong> 35 años</p>
-                        <div class="badges-wrapper">
-                            <span class="badge badge-status">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>
-                            <span class="badge badge-authorized">🛠️ PERSONAL AUTORIZADO INSTALACIÓN Y MANIPULACIÓN DE SISTEMA</span>
-                            <span class="badge">ÁREA: INSTALADOR</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="fichas/jhonathan-vargas.pdf" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
-            </div>
-
-        </div>
-
-        <!-- Ubicación -->
         <h2 class="section-title">Nuestra Ubicación</h2>
         <div class="location-section">
-            <p class="location-info">📍 <strong>Dirección:</strong> Av. Tsáchila y Río Zamora, Santo Domingo, Ecuador[cite: 7]</p>
-            
+            <p>📍 <strong>Dirección:</strong> Av. Tsáchila y Río Zamora, Santo Domingo, Ecuador</p>
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.791535284305!2d-79.1712!3d-0.2522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMTUnMDguMCJTIDc5wrAxMCcxNi4zIlc!5e0!3m2!1ses!2sec!4v1620000000000!5m2!1ses!2sec" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.791535284305!2d-79.1712!3d-0.2522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMTUnMDguMCJTIDc5wrAxMCcxNi4zIlc!5e0!3m2!1ses!2sec!4v1620000000000!5m2!1ses!2sec" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
-            <a href="https://sites.google.com/view/ateseg/contactanos" target="_blank" class="btn-location">
-                🗺️ Abrir Ubicación en Google Maps[cite: 7]
-            </a>
+            <a href="https://sites.google.com/view/ateseg/contactanos" target="_blank" class="btn-location">🗺️ Abrir Ubicación en Google Maps</a>
         </div>
 
         <footer>
-            &copy; 2026 ATESEG Cia. Ltda. Todos los derechos reservados.
+            © 2026 ATESEG Cia. Ltda. Todos los derechos reservados.
         </footer>
     </div>
 
-    <!-- Script de Búsqueda -->
+    <script src="datos.js"></script>
     <script>
-        function filterWorkers() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.getElementsByClassName('worker-card');
+        function renderWorkers(array) {
+            const grid = document.getElementById('workersList');
+            grid.innerHTML = "";
 
-            for (let i = 0; i < cards.length; i++) {
-                const text = cards[i].innerText.toLowerCase();
-                if (text.includes(input)) {
-                    cards[i].style.display = "flex";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
+            array.forEach(worker => {
+                const statusBadge = worker.activo 
+                    ? '<span class="badge badge-status-activo">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>' 
+                    : '<span class="badge badge-status-inactivo">🔴 ACTIVIDAD: INACTIVA / SUSPENDIDA</span>';
+
+                const card = document.createElement('div');
+                card.className = 'worker-card';
+                card.innerHTML = `
+                    <div>
+                        <div class="worker-header">
+                            <img src="${worker.foto}" alt="${worker.nombre}" class="worker-avatar" onerror="this.src='logo-ateseg.jpg'">
+                            <div>
+                                <h3>${worker.nombre}</h3>
+                                <p class="role">${worker.cargo}</p>
+                            </div>
+                        </div>
+                        <div class="worker-details">
+                            <p><strong>Edad:</strong> ${worker.edad}</p>
+                            <div class="badges-wrapper">
+                                ${statusBadge}
+                                <span class="badge badge-area">ÁREA: ${worker.area}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="${worker.ficha}" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        renderWorkers(trabajadores);
+
+        function filterWorkers() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = trabajadores.filter(w => 
+                w.nombre.toLowerCase().includes(query) || 
+                w.cargo.toLowerCase().includes(query) || 
+                w.area.toLowerCase().includes(query)
+            );
+            renderWorkers(filtered);
         }
     </script>
-
 </body>
 </html>
