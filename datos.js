@@ -3,10 +3,10 @@ const trabajadores = [
         nombre: "MARLON TAPIA",
         cargo: "GERENTE",
         edad: "65 años",
-        area: "OWNER",
-        activo: true, // Cambia a false si quieres ponerlo como inactivo
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/marlon-tapia.pdf"
+        area: "OWER",
+        activo: true,
+        foto: "marlon.jpg",
+        ficha: "ficha_marlon.pdf"
     },
     {
         nombre: "JAVIER VELEZ",
@@ -14,8 +14,8 @@ const trabajadores = [
         edad: "42 años",
         area: "INSTALADOR",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/javier-velez.pdf"
+        foto: "javier.jpg",
+        ficha: "ficha_javier.pdf"
     },
     {
         nombre: "YOLANDA REYES",
@@ -23,8 +23,8 @@ const trabajadores = [
         edad: "37 años",
         area: "ADMINISTRACIÓN",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/yolanda-reyes.pdf"
+        foto: "yolanda.jpg",
+        ficha: "ficha_yolanda.pdf"
     },
     {
         nombre: "EDUARDO CELI",
@@ -32,8 +32,11 @@ const trabajadores = [
         edad: "35 años",
         area: "VENTAS",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/eduardo-celi.pdf"
+        foto: "eduardo.jpg",
+        ficha: "ficha_eduardo.pdf",
+        // NUEVOS BOTONES ACTIVADOS PARA EDUARDO
+        recargaAhora: true,
+        whatsapp: "593991704150" 
     },
     {
         nombre: "RAFAEL VELIZ",
@@ -41,8 +44,8 @@ const trabajadores = [
         edad: "33 años",
         area: "OPERADOR",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/rafael-veliz.pdf"
+        foto: "rafael.jpg",
+        ficha: "ficha_rafael.pdf"
     },
     {
         nombre: "ALFONSO TAPIA",
@@ -50,8 +53,8 @@ const trabajadores = [
         edad: "26 años",
         area: "OPERADOR",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/alfonso-tapia.pdf"
+        foto: "alfonso.jpg",
+        ficha: "ficha_alfonso.pdf"
     },
     {
         nombre: "LINCOLN FAJARDO",
@@ -59,8 +62,8 @@ const trabajadores = [
         edad: "25 años",
         area: "ADMINISTRACIÓN",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/lincoln-fajardo.pdf"
+        foto: "lincoln.jpg",
+        ficha: "ficha_lincoln.pdf"
     },
     {
         nombre: "KEVIN AULAR",
@@ -68,8 +71,8 @@ const trabajadores = [
         edad: "25 años",
         area: "INSTALADOR",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/kevin-aular.pdf"
+        foto: "kevin.jpg",
+        ficha: "ficha_kevin.pdf"
     },
     {
         nombre: "LEONELA LUCIO",
@@ -77,8 +80,8 @@ const trabajadores = [
         edad: "22 años",
         area: "ADMINISTRACIÓN",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/leonela-lucio.pdf"
+        foto: "leonela.jpg",
+        ficha: "ficha_leonela.pdf"
     },
     {
         nombre: "ANDRES PERALTA",
@@ -86,8 +89,8 @@ const trabajadores = [
         edad: "20 años",
         area: "INSTALADOR",
         activo: true,
-        foto: "ANDRES.png",
-        ficha: "fichas/andres-peralta.pdf"
+        foto: "andres.jpg",
+        ficha: "ficha_andres.pdf"
     },
     {
         nombre: "JHONATHAN VARGAS",
@@ -95,7 +98,7 @@ const trabajadores = [
         edad: "35 años",
         area: "INSTALADOR",
         activo: true,
-        foto: "logo-ateseg.jpg",
-        ficha: "fichas/jhonathan-vargas.pdf"
+        foto: "jhonathan.jpg",
+        ficha: "ficha_jhonathan.pdf"
     }
 ];

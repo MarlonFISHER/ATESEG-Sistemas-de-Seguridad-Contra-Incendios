@@ -61,11 +61,17 @@
         .hero-title { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: #111111; margin-bottom: 8px; text-transform: uppercase; }
         .hero-desc { font-size: 0.95rem; color: #555555; line-height: 1.5; margin-bottom: 15px; }
         
+        /* Botones del Hero (Brochure e Instalación) */
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
         .btn-brochure {
             display: inline-block;
             background: linear-gradient(90deg, #cc0000 0%, #990000 100%);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 0.95rem;
             font-weight: 700;
             text-decoration: none;
@@ -74,6 +80,20 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .btn-brochure:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(204, 0, 0, 0.5); color: #ffffff; }
+
+        .btn-installation {
+            display: inline-block;
+            background: linear-gradient(90deg, #25d366 0%, #1da851 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-installation:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5); color: #ffffff; }
 
         .hero-right { display: flex; gap: 15px; }
         .stat-box { background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px 20px; text-align: center; min-width: 110px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
@@ -87,7 +107,7 @@
         .pdf-container { width: 100%; height: 600px; border-radius: 8px; overflow: hidden; border: 2px solid #dddddd; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #f9f9f9; }
         .pdf-container iframe { width: 100%; height: 100%; border: none; }
 
-        /* SECCIÓN DE PRODUCTOS (NUEVA) */
+        /* SECCIÓN DE PRODUCTOS */
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; margin-bottom: 25px; }
         .product-card { background-color: #ffffff; border: 1px solid #e0e0e0; border-top: 4px solid #cc0000; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
         .product-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
@@ -127,9 +147,27 @@
         .badge-status-activo { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
         .badge-status-inactivo { background-color: #ffebee; color: #c62828; border: 1px solid #ef9a9a; }
         .badge-area { background-color: #fff0f0; color: #cc0000; border: 1px solid #ffcccc; }
-        .badge-authorized { background-color: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+        
         .btn-pdf { display: block; margin-top: 12px; text-align: center; background-color: #1a1a1a; color: #ffffff; text-decoration: none; padding: 8px 10px; border-radius: 5px; font-size: 0.8rem; font-weight: 600; transition: background-color 0.2s ease; }
         .btn-pdf:hover { background-color: #cc0000; }
+
+        /* Botón de Recarga Ahora integrado en las tarjetas */
+        .btn-recarga {
+            display: block;
+            margin-top: 8px;
+            text-align: center;
+            background-color: #25d366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: background-color 0.2s ease;
+        }
+        .btn-recarga:hover {
+            background-color: #20bd5a;
+        }
 
         /* Ubicación */
         .location-section { background-color: #f9f9f9; border: 1px solid #e0e0e0; border-left: 5px solid #cc0000; border-radius: 8px; padding: 20px; margin-top: 20px; text-align: center; }
@@ -143,6 +181,7 @@
         @media (max-width: 768px) {
             .corporate-hero-card { flex-direction: column; gap: 20px; text-align: center; }
             .hero-right { width: 100%; justify-content: center; }
+            .hero-buttons { justify-content: center; }
             .pdf-container { height: 400px; }
         }
     </style>
@@ -158,13 +197,23 @@
             <p class="slogan">"Tu seguridad es nuestra prioridad"</p>
         </header>
 
-        <!-- Tarjeta Corporativa -->
+        <!-- Tarjeta Corporativa con los NUEVOS BOTONES -->
         <div class="corporate-hero-card">
             <div class="hero-left">
                 <p class="hero-tag">Portal Corporativo</p>
                 <h2 class="hero-title">Equipo ATESEG</h2>
-                <p class="hero-desc">Consulta nuestro personal, áreas de trabajo y descarga nuestro portafolio de servicios oficiales.</p>
-                <a href="brochure.pdf" target="_blank" class="btn-brochure">📥 Descargar Brochure Institucional</a>
+                <p class="hero-desc">Consulta nuestro personal, áreas de trabajo, servicios de instalación y descarga nuestro portafolio oficial.</p>
+                
+                <!-- BOTONES DE ACCIÓN PRINCIPAL -->
+                <div class="hero-buttons">
+                    <a href="brochure.pdf" target="_blank" class="btn-brochure">
+                        📥 Descargar Brochure
+                    </a>
+                    <a href="https://wa.me/593988257080?text=Hola,%20quisiera%20cotizar%20la%20instalaci%C3%B3n%20de%20un%20sistema%20contra%20incendios" target="_blank" class="btn-installation">
+                        🛠️ Cotizar Instalación
+                    </a>
+                </div>
+
             </div>
             <div class="hero-right">
                 <div class="stat-box">
@@ -184,7 +233,7 @@
             <iframe src="brochure.pdf" title="Brochure ATESEG"></iframe>
         </div>
 
-        <!-- NUEVA SECCIÓN: CATÁLOGO DE PRODUCTOS -->
+        <!-- CATÁLOGO DE PRODUCTOS -->
         <h2 class="section-title">Catálogo de Productos y Servicios</h2>
         <p style="text-align: center; margin-bottom: 20px; color: #555;">Conoce nuestros equipos de extinción de incendios. Venta y recarga profesional.</p>
         
@@ -263,6 +312,12 @@
                     ? '<span class="badge badge-status-activo">🟢 ACTIVIDAD: ACTIVA Y VIGENTE</span>' 
                     : '<span class="badge badge-status-inactivo">🔴 ACTIVIDAD: INACTIVA / SUSPENDIDA</span>';
 
+                // Si el trabajador tiene activada la opción de "recargaAhora", se genera el botón de WhatsApp
+                let botonRecarga = "";
+                if (worker.recargaAhora && worker.whatsapp) {
+                    botonRecarga = `<a href="https://wa.me/${worker.whatsapp}?text=Hola%20${worker.nombre},%20deseo%20solicitar%20el%20servicio%20de%20recarga%20ahora" target="_blank" class="btn-recarga">⚡ RECARGA AHORA / CONTACTAR</a>`;
+                }
+
                 const card = document.createElement('div');
                 card.className = 'worker-card';
                 card.innerHTML = `
@@ -283,6 +338,7 @@
                         </div>
                     </div>
                     <a href="${worker.ficha}" target="_blank" class="btn-pdf">📄 Ver Ficha Técnica / Carnet PDF</a>
+                    ${botonRecarga}
                 `;
                 grid.appendChild(card);
             });
