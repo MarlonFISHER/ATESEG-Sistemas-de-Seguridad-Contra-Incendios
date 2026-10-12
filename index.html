@@ -1,136 +1,333 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATESEG - Sistemas de Seguridad Contra Incendios</title>
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATESEG | Protección contra incendios en Santo Domingo</title>
+<meta name="description" content="Venta y recarga de extintores, instalación de sistemas contra incendios, detección y capacitación en Santo Domingo, Ecuador.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d22a12;--red-d:#a81d0a;--ink:#1a1412;--yel:#f5b800;--bg:#fafaf8;--bg2:#efedea;--grn:#1b8a4b;--line:#d9d5d0;--hz:repeating-linear-gradient(-45deg,#1a1412 0 14px,#f5b800 14px 28px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Barlow',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+h1,h2,h3,.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif;line-height:1.05}
+a{color:inherit}
+svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+:focus-visible{outline:3px solid var(--yel);outline-offset:2px}
+.wrap{max-width:1150px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.alt{background:var(--bg2)}
+.hz{height:15px;background:var(--hz)}
+h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:10px}
+.lead{max-width:60ch;color:#4a423d;margin-bottom:32px}
+
+/* Botones Generales */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-w{background:#fff;color:var(--red)}.btn-o{border-color:#fff;color:#fff}.btn-g{background:var(--grn);color:#fff}.btn-r{background:var(--red);color:#fff}.btn-k{background:var(--ink);color:#fff}
+.btn-outline-w{background:transparent;color:var(--red);border-color:var(--red);background:#fff}
+.btn-outline-r{background:transparent;color:#fff;border-color:#fff;}
+
+/* BANNERS LATERALES DE CAPACITACIONES */
+.side-banner { position: fixed; top: 50%; transform: translateY(-50%); background: linear-gradient(90deg, #d22a12, #a81d0a); color: #ffffff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; padding: 12px 20px; z-index: 100; text-decoration: none; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: 1px solid #ff4d4d; letter-spacing: 0.5px; }
+.side-banner:hover { transform: translateY(-50%) scale(1.05); }
+.banner-left { left: 0; border-radius: 0 8px 8px 0; border-left: none; }
+.banner-right { right: 0; border-radius: 8px 0 0 8px; border-right: none; }
+@media (min-width: 1300px) { .side-banner { display: block; } }
+
+/* barra y nav */
+.top{background:var(--ink);color:#fff;font-size:.85rem;text-align:center;padding:6px 10px}
+.top b{color:var(--yel)}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line); box-shadow: 0 2px 10px rgba(0,0,0,0.1);}
+nav .wrap{display:flex;align-items:center;gap:20px;height:70px}
+.brand{display:none;} /* Oculto en el nav porque ya está enorme en el centro */
+nav .menu-links {display:flex; gap:20px; margin-right:auto; margin-left: auto;}
+nav a.l{text-decoration:none;font-weight:600;font-size:1.05rem; color: #111;}
+nav a.l:hover{color:var(--red)}
+@media(max-width:760px){nav .menu-links{display:none}}
+
+/* --- NUEVO HERO REPLICANDO LA IMAGEN --- */
+.hero{background:var(--red);color:#fff;padding:50px 0;position:relative;}
+.hero-grid {display:grid;grid-template-columns:220px 1fr 320px;gap:30px;align-items:center;}
+
+/* Banderas */
+.hero-flags {display:flex;flex-direction:column;gap:15px;}
+.hero-flags img {width:100%;height:auto;border:3px solid #fff;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+
+/* Centro (Logo y Títulos) */
+.hero-center {display:flex;flex-direction:column;gap:15px;}
+.hero-white-box {background:#fff;color:var(--ink);padding:30px 20px;border-radius:2px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+.hero-white-box img {max-width:320px;margin-bottom:20px;}
+.hero-white-box h1 {font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin-bottom:15px;line-height:1.1; text-transform: uppercase;}
+.hero-white-box h3 {font-family: 'Barlow', sans-serif; font-size:1.05rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
+.hero-desc {font-size:1.15rem;line-height:1.5;max-width:600px;margin: 10px auto;text-align:left;}
+.hero-cta {display:flex;gap:15px; flex-wrap: wrap;}
+
+/* Derecha (Extintor) */
+.hero-extinguisher {background:#fff;border-radius:25px;padding:30px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+.hero-extinguisher img {max-width:100%;height:auto; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));}
+
+/* Stats (Barra negra inferior) */
+.stats{background:var(--ink);color:#fff;}
+.stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:25px 20px}
+.stats div{display:flex;align-items:center;gap:15px;justify-content:center}
+.stats b{font-family:'Barlow Condensed';font-size:3rem;color:var(--yel); line-height: 1;}
+.stats small{font-size:.9rem;color:#ccc;line-height:1.3}
+
+@media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr; text-align:center;}
+    .hero-flags{flex-direction:row;justify-content:center;}
+    .hero-flags img{width:150px;}
+    .hero-desc {text-align: center;}
+    .hero-cta {justify-content: center;}
+    .hero-extinguisher {max-width: 350px; margin: 0 auto;}
+}
+
+/* El resto de estilos (Servicios, Fuego, Catálogo, Equipo, Contacto) se mantienen idénticos */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.svc{background:#fff;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:6px;padding:22px;display:flex;gap:16px}
+.svc .ic{width:52px;height:52px;border-radius:8px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0}
+.svc h3{font-size:1.4rem;font-weight:700;margin-bottom:4px}
+.svc p{font-size:.92rem;color:#4a423d}
+
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.tab{width:68px;height:68px;border-radius:10px;border:3px solid var(--c);background:#fff;color:var(--c);font-family:'Barlow Condensed';font-weight:800;font-size:2.2rem;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--c);color:#fff;transform:translateY(-4px)}
+.panel{background:#fff;border:1px solid var(--line);border-top:8px solid var(--c);border-radius:8px;padding:26px;display:grid;grid-template-columns:auto 1fr;gap:26px}
+.panel .big{font-family:'Barlow Condensed';font-weight:800;font-size:7rem;line-height:.9;color:var(--c)}
+.panel h3{font-size:1.8rem;font-weight:700;margin-bottom:10px}
+.panel dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:.98rem;margin-bottom:14px}
+.panel dt{font-weight:600}
+.warn{display:none;background:#ffebe8;border-left:5px solid var(--red);padding:8px 12px;font-weight:600;margin-bottom:14px}
+.tag{display:inline-block;padding:4px 10px;border-radius:4px;font-size:.85rem;font-weight:600;background:#e6f4ec;color:var(--grn);margin-right:10px}
+.tag.sp{background:#fff3cf;color:#7a5b00}
+@media(max-width:640px){.panel{grid-template-columns:1fr;gap:6px}.panel .big{font-size:4.5rem}}
+.pass{margin-top:30px;background:var(--ink);color:#fff;border-radius:8px;padding:24px}
+.pass h3{font-size:1.6rem;margin-bottom:14px;color:var(--yel)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.steps div{border-left:4px solid var(--red);padding-left:12px;font-size:.92rem}
+.steps b{font-family:'Barlow Condensed';font-size:2.2rem;color:var(--red);display:block;line-height:1}
+
+.prod{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.prod img{width:100%;height:190px;object-fit:contain;background:#f4f2ef;padding:12px}
+.prod div{padding:18px;display:flex;flex-direction:column;gap:8px;flex-grow:1}
+.prod h3{font-size:1.45rem;font-weight:700}
+.prod p{font-size:.92rem;color:#4a423d;flex-grow:1}
+.prod .btn{justify-content:center}
+
+.pdf{height:560px;border:3px solid var(--ink);border-radius:8px;overflow:hidden;background:#fff;margin-top:20px}
+.pdf iframe{width:100%;height:100%;border:0}
+
+.search{width:100%;max-width:480px;padding:13px 16px;font:inherit;border:2px solid var(--ink);border-radius:6px;margin-bottom:24px;background:#fff}
+.wk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.wh{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.wh img{width:72px;height:72px;border-radius:50%;border:3px solid var(--red);object-fit:cover;background:#eee}
+.wk h3{font-size:1.25rem;font-weight:700;text-transform:uppercase}
+.role{color:var(--red);font-weight:600;font-size:.9rem}
+.wk p{font-size:.9rem}
+.bd{display:inline-block;margin-top:6px;padding:3px 8px;border-radius:4px;font-size:.75rem;font-weight:600}
+.ok{background:#e6f4ec;color:var(--grn)}.no{background:#fde8e8;color:#b3261e}.ar{background:#f1efec}
+.wk a{display:block;text-align:center;padding:9px;border-radius:5px;font-size:.85rem;font-weight:600;text-decoration:none;color:#fff;background:var(--ink)}
+.wk a.rc{background:var(--grn);margin-top:-2px}
+.wk a:hover{background:var(--red)}
+
+.ct{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+.ct .col{display:flex;flex-direction:column;gap:12px}
+.ct .btn{justify-content:center}
+.ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff}
+.map{border:3px solid var(--ink);border-radius:8px;overflow:hidden;min-height:300px}
+.map iframe{width:100%;height:100%;min-height:300px;border:0}
+@media(max-width:760px){.ct{grid-template-columns:1fr}}
+footer{background:var(--ink);color:#bbb;text-align:center;padding:26px 20px;font-size:.88rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--grn);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.9rem;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- BANNERS LATERALES DE CAPACITACIONES -->
+<a href="https://wa.me/593988257080?text=Hola,%20deseo%20cotizar%20una%20capacitación%20contra%20incendios" target="_blank" class="side-banner banner-left">🔥 CAPACITACIONES</a>
+<a href="https://wa.me/593988257080?text=Hola,%20deseo%20cotizar%20una%20capacitación%20contra%20incendios" target="_blank" class="side-banner banner-right">🔥 CAPACITACIONES</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="flame" viewBox="0 0 24 24"><path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-10z"/></symbol>
+<symbol id="ext" viewBox="0 0 24 24"><rect x="7" y="9" width="9" height="13" rx="2"/><path d="M10 9V6h3v3M10 6L8 4h5M13 5l5 1v7"/></symbol>
+<symbol id="wr" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+<symbol id="bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a2 2 0 0 0 3.4 0"/></symbol>
+<symbol id="exit" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></symbol>
+<symbol id="pipe" viewBox="0 0 24 24"><path d="M3 6h18M7 6v4M12 6v4M17 6v4M5 14l2-3 2 3M10 14l2-3 2 3M15 14l2-3 2 3M7 18l0 3M12 18v3M17 18v3"/></symbol>
+<symbol id="ph" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.300 1.800.6 2.800.7a2 2 0 0 1 1.700 2z"/></symbol>
+<symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.500a8.400 8.400 0 0 1-12.300 7.400L3 21l1.900-5.700A8.500 8.500 0 1 1 21 11.500z"/></symbol>
+<symbol id="dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0zM12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></symbol>
+<symbol id="doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6"/></symbol>
+</svg>
+
+<div class="top">Emergencia en curso: llama al <b>911</b>. Para asesoría y cotizaciones, escríbenos por WhatsApp.</div>
+<nav><div class="wrap">
+  <div class="menu-links">
+    <a class="l" href="#servicios">Servicios</a>
+    <a class="l" href="#fuego">Tipos de fuego</a>
+    <a class="l" href="#catalogo">Extintores</a>
+    <a class="l" href="#equipo">Equipo</a>
+    <a class="l" href="#contacto">Contacto</a>
+  </div>
+  <a class="btn btn-g" href="https://wa.me/593988257080" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>WhatsApp</a>
+</div></nav>
+
+<!-- SECCIÓN INICIO ESTILO IMAGEN -->
+<header class="hero">
+  <div class="wrap hero-grid">
     
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #111111; 
-            color: #222222;
-            padding: 25px 10px;
-        }
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-top: 6px solid #cc0000;
-            border-radius: 12px;
-            padding: 30px 25px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.12);
-        }
+    <!-- Columna 1: Banderas -->
+    <div class="hero-flags">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bandera_Provincia_Santo_Domingo_de_los_Ts%C3%A1chilas.svg/320px-Bandera_Provincia_Santo_Domingo_de_los_Ts%C3%A1chilas.svg.png" alt="Bandera Santo Domingo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/320px-Flag_of_Ecuador.svg.png" alt="Bandera Ecuador">
+    </div>
 
-        /* Encabezado Principal */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            margin-bottom: 25px;
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('fondo-ateseg.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .main-logo { width: 100%; max-width: 380px; height: auto; margin-bottom: 12px; background-color: #ffffff; padding: 10px; border-radius: 8px; }
-        h1 { font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; margin-bottom: 5px; color: #ffffff; }
-        p.subtitle { font-size: 1rem; color: #dddddd; }
-        p.slogan { font-size: 1.05rem; font-weight: 700; color: #ff3333; margin-top: 8px; text-transform: uppercase; }
+    <!-- Columna 2: Cuadro Blanco y Textos -->
+    <div class="hero-center">
+      <div class="hero-white-box">
+        <img src="logo-ateseg.jpg" alt="ATESEG Logo" onerror="this.src='https://via.placeholder.com/320x100?text=ATESEG'">
+        <h1>SISTEMA DE SEGURIDAD CONTRA INCENDIOS</h1>
+        <h3>TU SEGURIDAD ES NUESTRA PRIORIDAD</h3>
+      </div>
+      <p class="hero-desc">Venta y recarga de extintores, instalación de sistemas y capacitación para casas, negocios e industrias de Santo Domingo.</p>
+      <div class="hero-cta">
+        <a class="btn btn-outline-w" href="https://wa.me/593988257080?text=Hola,%20quisiera%20cotizar%20la%20instalaci%C3%B3n%20de%20un%20sistema%20contra%20incendios" target="_blank" rel="noopener"><svg class="i"><use href="#wr"/></svg>Cotizar instalación</a>
+        <a class="btn btn-outline-r" href="brochure.pdf" target="_blank"><svg class="i"><use href="#dl"/></svg>Descargar brochure</a>
+      </div>
+    </div>
 
-        /* Tarjeta Corporativa Principal */
-        .corporate-hero-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 16px;
-            padding: 25px 30px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .hero-left { max-width: 550px; }
-        .hero-tag { font-size: 0.75rem; font-weight: 700; color: #cc0000; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
-        .hero-title { font-family: 'Oswald', sans-serif; font-size: 2.2rem; color: #111111; margin-bottom: 8px; text-transform: uppercase; }
-        .hero-desc { font-size: 0.95rem; color: #555555; line-height: 1.5; margin-bottom: 15px; }
-        
-        /* Botones del Hero (Brochure e Instalación) */
-        .hero-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .btn-brochure {
-            display: inline-block;
-            background: linear-gradient(90deg, #cc0000 0%, #990000 100%);
-            color: #ffffff;
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .btn-brochure:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(204, 0, 0, 0.5); color: #ffffff; }
+    <!-- Columna 3: Extintor Derecha -->
+    <div class="hero-extinguisher">
+      <img src="extintor-pqs.jpg" alt="Extintor ATESEG" onerror="this.src='https://via.placeholder.com/200x350?text=Extintor'">
+    </div>
 
-        .btn-installation {
-            display: inline-block;
-            background: linear-gradient(90deg, #25d366 0%, #1da851 100%);
-            color: #ffffff;
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .btn-installation:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5); color: #ffffff; }
+  </div>
+</header>
 
-        .hero-right { display: flex; gap: 15px; }
-        .stat-box { background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px 20px; text-align: center; min-width: 110px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
-        .stat-number { font-family: 'Oswald', sans-serif; font-size: 1.8rem; color: #cc0000; font-weight: 700; line-height: 1.1; margin-bottom: 4px; }
-        .stat-label { font-size: 0.8rem; color: #666666; text-transform: lowercase; font-weight: 600; }
+<!-- Barra negra con estadísticas -->
+<div class="stats"><div class="wrap">
+  <div><b>11</b><small>colaboradores<br>en el equipo</small></div>
+  <div><b>24/7</b><small>compromiso<br>con tu seguridad</small></div>
+  <div><b>5</b><small>clases de fuego<br>cubiertas</small></div>
+</div></div>
 
-        /* Títulos de sección */
-        h2.section-title { font-family: 'Oswald', sans-serif; color: #cc0000; font-size: 1.5rem; text-align: center; margin: 30px 0 15px 0; text-transform: uppercase; border-bottom: 2px solid #eeeeee; padding-bottom: 8px; }
+<!-- Franja de Peligro -->
+<div class="hz"></div>
 
-        /* VISOR DE PDF */
-        .pdf-container { width: 100%; height: 600px; border-radius: 8px; overflow: hidden; border: 2px solid #dddddd; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #f9f9f9; }
-        .pdf-container iframe { width: 100%; height: 100%; border: none; }
+<section id="servicios"><div class="wrap">
+  <h2>Servicios</h2>
+  <p class="lead">Todo lo que tu local necesita para prevenir, detectar y controlar un incendio.</p>
+  <div class="grid">
+    <div class="svc"><div class="ic"><svg class="i"><use href="#ext"/></svg></div><div><h3>Venta de extintores</h3><p>PQS, CO2 y Foam disponibles en tienda física.</p></div></div>
+    <div class="svc"><div class="ic"><svg class="i"><use href="#wr"/></svg></div><div><h3>Recarga y mantenimiento</h3><p>Recargamos y revisamos tus equipos para que funcionen el día que los necesites.</p></div></div>
+    <div class="svc"><div class="ic"><svg class="i"><use href="#pipe"/></svg></div><div><h3>Sistemas contra incendios</h3><p>Instalación de redes y equipos fijos para tu local o industria.</p></div></div>
+    <div class="svc"><div class="ic"><svg class="i"><use href="#bell"/></svg></div><div><h3>Detección y alarmas</h3><p>Detectores de humo y alarmas que avisan a tiempo.</p></div></div>
+    <div class="svc"><div class="ic"><svg class="i"><use href="#exit"/></svg></div><div><h3>Señalética y evacuación</h3><p>Rutas de salida y letreros de seguridad bien ubicados.</p></div></div>
+    <div class="svc"><div class="ic"><svg class="i"><use href="#users"/></svg></div><div><h3>Capacitación</h3><p>Entrenamos a tu personal para usar un extintor y evacuar.</p></div></div>
+  </div>
+</div></section>
 
-        /* SECCIÓN DE PRODUCTOS */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; margin-bottom: 25px; }
-        .product-card { background-color: #ffffff; border: 1px solid #e0e0e0; border-top: 4px solid #cc0000; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease; }
-        .product-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
-        .product-img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; border-radius: 6px; background-color: #f9f9f9; padding: 10px; border: 1px solid #eeeeee; }
-        .product-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.25rem; color: #111111; margin-bottom: 8px; text-transform: uppercase; }
-        .product-card p.desc { font-size: 0.9rem; color: #555555; margin-bottom: 15px; flex-grow: 1; }
-        .product-card p.availability { font-size: 0.85rem; color: #cc0000; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
-        .btn-quote { display: inline-block; background-color: #25d366; color: #ffffff; padding: 10px 15px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background-color 0.2s ease; }
-        .btn-quote:hover { background-color: #20bd5a; }
+<section id="fuego" class="alt"><div class="wrap">
+  <h2>¿Qué extintor uso según el fuego?</h2>
+  <p class="lead">Usar el extintor equivocado puede empeorar un incendio. Toca una clase y revisa qué hacer.</p>
+  <div class="tabs" id="tabs" role="group" aria-label="Clases de fuego"></div>
+  <div class="panel" id="panel" aria-live="polite"></div>
+  <div class="pass">
+    <h3>Cómo usar un extintor: PASS</h3>
+    <div class="steps">
+      <div><b>P</b>Jala el seguro</div><div><b>A</b>Apunta a la base del fuego</div><div><b>S</b>Aprieta la palanca</div><div><b>S</b>Barre de lado a lado</div>
+    </div>
+  </div>
+  <p style="font-size:.8rem;color:#6a615b;margin-top:12px">La clasificación puede variar según el país. En Europa, los aceites de cocina son clase F.</p>
+</div></section>
 
-        /* Canales de Contacto */
-        .contact-section { background-color: #f9f9f9; border: 1px solid #e0e0e0; border-left: 5px solid #cc0000; border-radius: 8px; padding: 20px; margin-bottom: 25px; text-align: center; }
-        .contact-buttons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 15px; }
-        .btn-contact { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 15px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; color: #ffffff; transition: transform 0.2s ease; }
-        .btn-contact:hover { transform: translateY(-2px); }
-        .btn-whatsapp { background-color: #25d366; }
-        .btn-call { background-color: #cc0000; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+<section id="catalogo"><div class="wrap">
+  <h2>Extintores en tienda</h2>
+  <p class="lead">Venta y recarga profesional. Cotiza por WhatsApp y retira en nuestra tienda física.</p>
+  <div class="grid">
+    <article class="prod"><img src="extintor-pqs.jpg" alt="Extintor PQS" onerror="this.src='logo-ateseg.jpg'"><div><h3>Extintor PQS (polvo químico)</h3><p>Para fuegos A, B y C. El más versátil para negocios y hogar.</p><a class="btn btn-g" href="https://wa.me/593988257080?text=Hola,%20quisiera%20cotizar%20la%20venta/recarga%20de%20un%20Extintor%20PQS" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>Cotizar</a></div></article>
+    <article class="prod"><img src="extintor-co2.jpg" alt="Extintor CO2" onerror="this.src='logo-ateseg.jpg'"><div><h3>Extintor CO2</h3><p>Para fuegos B y C. No deja residuos: ideal para equipos electrónicos, servidores y laboratorios.</p><a class="btn btn-g" href="https://wa.me/593988257080?text=Hola,%20quisiera%20cotizar%20la%20venta/recarga%20de%20un%20Extintor%20CO2" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>Cotizar</a></div></article>
+    <article class="prod"><img src="extintor-foam.jpg" alt="Extintor Foam" onerror="this.src='logo-ateseg.jpg'"><div><h3>Extintor Foam (espuma)</h3><p>Para fuegos A y B. Sofoca y enfría, excelente para derrames de hidrocarburos.</p><a class="btn btn-g" href="https://wa.me/593988257080?text=Hola,%20quisiera%20cotizar%20la%20venta/recarga%20de%20un%20Extintor%20Foam" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>Cotizar</a></div></article>
+  </div>
+  <div style="margin-top:36px"><h2 style="font-size:2rem">Portafolio de servicios</h2>
+  <div class="pdf"><iframe src="brochure.pdf" title="Brochure ATESEG"></iframe></div></div>
+</div></section>
 
-        /* Buscador */
-        .search-box { margin-bottom: 25px; text-align: center; }
-        .search-box input { width: 100%; max-width: 500px; padding: 12px 16px; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; border: 2px solid #dddddd; border-radius: 8px; outline: none; transition: border-color 0.3s; }
-        .search-box input:focus { border-color: #cc0000; }
+<div class="hz"></div>
+<section id="equipo" class="alt"><div class="wrap">
+  <h2>Nuestro equipo</h2>
+  <p class="lead">Personal identificado y con actividad vigente. Busca por nombre, cargo o área.</p>
+  <input class="search" id="searchInput" type="search" placeholder="Buscar por nombre, cargo o área" aria-label="Buscar trabajador">
+  <div class="grid" id="workersList"></div>
+</div></section>
 
-        /* Grid de Trabajadores */
-        .workers-grid { display: grid; grid-template-columns:
+<section id="contacto"><div class="wrap">
+  <h2>Contáctanos</h2>
+  <p class="lead">Av. Tsáchila y Río Zamora, Santo Domingo, Ecuador.</p>
+  <div class="ct">
+    <div class="col">
+      <a class="btn btn-g" href="https://wa.me/593988257080" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>WhatsApp 0988257080</a>
+      <a class="btn btn-g" href="https://wa.me/593980677550" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>WhatsApp 0980677550</a>
+      <a class="btn btn-r" href="tel:0988257080"><svg class="i"><use href="#ph"/></svg>Llamar ahora</a>
+      <a class="btn ig" href="https://www.instagram.com/atesegsd/" target="_blank" rel="noopener">Instagram @atesegsd</a>
+      <a class="btn btn-k" href="https://sites.google.com/view/ateseg/contactanos" target="_blank" rel="noopener"><svg class="i"><use href="#pin"/></svg>Abrir en Google Maps</a>
+    </div>
+    <div class="map"><iframe title="Mapa" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.791535284305!2d-79.1712!3d-0.2522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMTUnMDguMCJTIDc5wrAxMCcxNi4zIlc!5e0!3m2!1ses!2sec!4v1620000000000!5m2!1ses!2sec"></iframe></div>
+  </div>
+</div></section>
+
+<footer>&copy; 2026 ATESEG Cia. Ltda. Todos los derechos reservados.</footer>
+<a class="wa" href="https://wa.me/593988257080" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="i"><use href="#chat"/></svg></a>
+
+<script src="datos.js"></script>
+<script>
+const W='593988257080';
+const clases=[
+ {k:'A',c:'#2e7d32',t:'Sólidos comunes',m:'Madera, papel y tela',e:'Agua o extintor ABC',s:'PQS y Foam'},
+ {k:'B',c:'#c62828',t:'Líquidos inflamables',m:'Gasolina, aceite y pintura',e:'Polvo químico o CO₂',s:'PQS, CO2 y Foam'},
+ {k:'C',c:'#1565c0',t:'Equipos eléctricos',m:'Equipos eléctricos energizados',e:'CO₂ o polvo químico',s:'PQS y CO2',w:'Nunca uses agua.'},
+ {k:'D',c:'#6a1b9a',t:'Metales combustibles',m:'Magnesio, sodio',e:'Extintor especial de polvo seco'},
+ {k:'K',c:'#e65100',t:'Aceites y grasas de cocina',m:'Aceites y grasas de cocina',e:'Extintor especial de acetato de potasio'}
+];
+const tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
+function show(k){
+  const x=clases.find(c=>c.k===k);
+  panel.style.setProperty('--c',x.c);
+  [...tabs.children].forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
+  panel.innerHTML=`<div class="big">${x.k}</div><div><h3>Clase ${x.k}: ${x.t}</h3>
+  ${x.w?`<div class="warn" style="display:block">${x.w}</div>`:''}
+  <dl><dt>Qué arde</dt><dd>${x.m}</dd><dt>Extintor</dt><dd>${x.e}</dd></dl>
+  ${x.s?`<span class="tag">En ATESEG: ${x.s}</span>`:`<span class="tag sp">Equipo especial: consulta disponibilidad</span><a class="btn btn-g" style="padding:8px 14px;font-size:.9rem" target="_blank" rel="noopener" href="https://wa.me/${W}?text=Hola,\%20quisiera\%20cotizar\%20un\%20extintor\%20Clase\%20${x.k}">Cotizar por WhatsApp</a>`}</div>`;
+}
+clases.forEach(x=>{const b=document.createElement('button');b.className='tab';b.dataset.k=x.k;b.style.setProperty('--c',x.c);b.textContent=x.k;b.setAttribute('aria-label','Clase '+x.k);b.onclick=()=>show(x.k);tabs.appendChild(b)});
+show('A');
+
+function renderWorkers(a){
+  const g=document.getElementById('workersList');g.innerHTML='';
+  a.forEach(w=>{
+    const rc=w.recargaAhora&&w.whatsapp?`<a class="rc" href="https://wa.me/${w.whatsapp}?text=Hola%20${w.nombre},%20deseo%20solicitar%20el%20servicio%20de%20recarga%20ahora" target="_blank" rel="noopener">Solicitar recarga ahora</a>`:'';
+    const d=document.createElement('div');d.className='wk';
+    d.innerHTML=`<div><div class="wh"><img src="${w.foto}" alt="${w.nombre}" onerror="this.src='logo-ateseg.jpg'"><div><h3>${w.nombre}</h3><p class="role">${w.cargo}</p></div></div>
+    <p><strong>Edad:</strong> ${w.edad}</p>
+    <span class="bd ${w.activo?'ok':'no'}">${w.activo?'Actividad activa y vigente':'Actividad inactiva o suspendida'}</span><br>
+    <span class="bd ar">Área: ${w.area}</span></div>
+    ${rc}`;
+    g.appendChild(d);
+  });
+}
+renderWorkers(trabajadores);
+document.getElementById('searchInput').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  renderWorkers(trabajadores.filter(w=>w.nombre.toLowerCase().includes(q)||w.cargo.toLowerCase().includes(q)||w.area.toLowerCase().includes(q)));
+});
+</script>
+</body>
+</html>
