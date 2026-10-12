@@ -13,6 +13,39 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{font-family:'Barlow',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+
+/* --- INICIO: TEMA CONTRA INCENDIOS E INSTALACIONES HÍDRICAS (ANIMADO HD) --- */
+.hero {
+    position: relative;
+    color: #fff;
+    padding: 60px 0;
+    overflow: hidden;
+    z-index: 1;
+    /* Gradiente animado dinámico: Rojo fuego, acero oscuro y azul de red hídrica */
+    background: linear-gradient(-45deg, #d22a12, #a81d0a, #1a1412, #0d2738);
+    background-size: 400% 400%;
+    animation: presionHidraulica 12s ease infinite;
+}
+
+/* Textura de plano técnico / malla de tuberías de alta definición */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: -1;
+}
+
+@keyframes presionHidraulica {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* --- FIN: TEMA CONTRA INCENDIOS --- */
+
 h1,h2,h3,.cond{font-family:'Barlow Condensed','Arial Narrow',sans-serif;line-height:1.05}
 a{color:inherit}
 svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
@@ -25,11 +58,11 @@ h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:10px}
 .lead{max-width:60ch;color:#4a423d;margin-bottom:32px}
 
 /* Botones Generales */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;transition:all .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.2)}
 .btn-w{background:#fff;color:var(--red)}.btn-o{border-color:#fff;color:#fff}.btn-g{background:var(--grn);color:#fff}.btn-r{background:var(--red);color:#fff}.btn-k{background:var(--ink);color:#fff}
-.btn-outline-w{background:transparent;color:var(--red);border-color:var(--red);background:#fff}
-.btn-outline-r{background:transparent;color:#fff;border-color:#fff;}
+.btn-outline-w{background:#fff;color:var(--red);border-color:#fff;}
+.btn-outline-r{background:rgba(0,0,0,0.4);color:#fff;border-color:rgba(255,255,255,0.4);backdrop-filter:blur(4px)}
 
 /* BANNERS LATERALES DE CAPACITACIONES */
 .side-banner { position: fixed; top: 50%; transform: translateY(-50%); background: linear-gradient(90deg, #d22a12, #a81d0a); color: #ffffff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; padding: 12px 20px; z-index: 100; text-decoration: none; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: 1px solid #ff4d4d; letter-spacing: 0.5px; }
@@ -41,54 +74,53 @@ h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:10px}
 /* barra y nav */
 .top{background:var(--ink);color:#fff;font-size:.85rem;text-align:center;padding:6px 10px}
 .top b{color:var(--yel)}
-nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line); box-shadow: 0 2px 10px rgba(0,0,0,0.1);}
+nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,0.1)}
 nav .wrap{display:flex;align-items:center;gap:20px;height:70px}
-.brand{display:none;} /* Oculto en el nav porque ya está enorme en el centro */
-nav .menu-links {display:flex; gap:20px; margin-right:auto; margin-left: auto;}
-nav a.l{text-decoration:none;font-weight:600;font-size:1.05rem; color: #111;}
+.menu-links {display:flex;gap:20px;margin-right:auto;margin-left:auto}
+nav a.l{text-decoration:none;font-weight:600;font-size:1.05rem;color:#111}
 nav a.l:hover{color:var(--red)}
 @media(max-width:760px){nav .menu-links{display:none}}
 
-/* --- NUEVO HERO REPLICANDO LA IMAGEN --- */
-.hero{background:var(--red);color:#fff;padding:50px 0;position:relative;}
-.hero-grid {display:grid;grid-template-columns:220px 1fr 320px;gap:30px;align-items:center;}
+/* --- ZONA HERO REFINADA Y ELEGANTE --- */
+.hero-grid {display:grid;grid-template-columns:180px 1fr 280px;gap:25px;align-items:center;}
 
-/* Banderas */
+/* Banderas agregadas con enlaces directos */
 .hero-flags {display:flex;flex-direction:column;gap:15px;}
-.hero-flags img {width:100%;height:auto;border:3px solid #fff;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+.hero-flags img {width:100%;height:auto;border-radius:10px;border:3px solid rgba(255,255,255,0.9);box-shadow:0 8px 20px rgba(0,0,0,0.4);object-fit:cover;}
 
-/* Centro (Logo y Títulos) */
+/* Centro (Caja Blanca con Diseño Moderno) */
 .hero-center {display:flex;flex-direction:column;gap:15px;}
-.hero-white-box {background:#fff;color:var(--ink);padding:30px 20px;border-radius:2px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.15);}
-.hero-white-box img {max-width:320px;margin-bottom:20px;}
-.hero-white-box h1 {font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin-bottom:15px;line-height:1.1; text-transform: uppercase;}
-.hero-white-box h3 {font-family: 'Barlow', sans-serif; font-size:1.05rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
-.hero-desc {font-size:1.15rem;line-height:1.5;max-width:600px;margin: 10px auto;text-align:left;}
-.hero-cta {display:flex;gap:15px; flex-wrap: wrap;}
+.hero-white-box {background:#ffffff;color:var(--ink);padding:35px 25px;border-radius:16px;text-align:center;box-shadow:0 12px 35px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.25);}
+.hero-white-box img {max-width:320px;width:100%;height:auto;margin-bottom:18px;object-fit:contain}
+.hero-white-box h1 {font-size:clamp(1.8rem, 3.2vw, 2.6rem);font-weight:800;margin-bottom:10px;line-height:1.1;text-transform:uppercase;color:#111;}
+.hero-white-box h3 {font-family:'Barlow',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--red);}
 
-/* Derecha (Extintor) */
-.hero-extinguisher {background:#fff;border-radius:25px;padding:30px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.25);}
-.hero-extinguisher img {max-width:100%;height:auto; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));}
+.hero-desc {font-size:1.05rem;line-height:1.5;color:#f0ede6;margin:5px 0;text-align:left;font-weight:500;text-shadow:0 2px 4px rgba(0,0,0,0.6);}
+.hero-cta {display:flex;gap:12px;flex-wrap:wrap;margin-top:5px;}
+
+/* Derecha (Extintor Destacado con Contenedor Translúcido HD) */
+.hero-extinguisher {background:rgba(20, 18, 16, 0.55);border:2px solid rgba(255,255,255,0.18);border-radius:16px;padding:25px 20px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.4);backdrop-filter:blur(6px);}
+.hero-extinguisher img {max-width:180px;width:100%;height:auto;filter:drop-shadow(0 10px 15px rgba(0,0,0,0.6));object-fit:contain;}
+.ext-caption {margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;}
 
 /* Stats (Barra negra inferior) */
 .stats{background:var(--ink);color:#fff;}
 .stats .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:25px 20px}
 .stats div{display:flex;align-items:center;gap:15px;justify-content:center}
-.stats b{font-family:'Barlow Condensed';font-size:3rem;color:var(--yel); line-height: 1;}
+.stats b{font-family:'Barlow Condensed';font-size:3rem;color:var(--yel);line-height:1}
 .stats small{font-size:.9rem;color:#ccc;line-height:1.3}
 
 @media(max-width:980px){
-    .hero-grid{grid-template-columns:1fr; text-align:center;}
+    .hero-grid{grid-template-columns:1fr;text-align:center;}
     .hero-flags{flex-direction:row;justify-content:center;}
-    .hero-flags img{width:150px;}
+    .hero-flags img{width:120px;}
     .hero-desc {text-align: center;}
     .hero-cta {justify-content: center;}
-    .hero-extinguisher {max-width: 350px; margin: 0 auto;}
+    .hero-extinguisher {max-width: 280px; margin: 0 auto;}
 }
 
-/* El resto de estilos (Servicios, Fuego, Catálogo, Equipo, Contacto) se mantienen idénticos */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
-.svc{background:#fff;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:6px;padding:22px;display:flex;gap:16px}
+.svc{background:#fff;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:8px;padding:22px;display:flex;gap:16px;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
 .svc .ic{width:52px;height:52px;border-radius:8px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0}
 .svc h3{font-size:1.4rem;font-weight:700;margin-bottom:4px}
 .svc p{font-size:.92rem;color:#4a423d}
@@ -96,7 +128,7 @@ nav a.l:hover{color:var(--red)}
 .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
 .tab{width:68px;height:68px;border-radius:10px;border:3px solid var(--c);background:#fff;color:var(--c);font-family:'Barlow Condensed';font-weight:800;font-size:2.2rem;cursor:pointer}
 .tab[aria-pressed=true]{background:var(--c);color:#fff;transform:translateY(-4px)}
-.panel{background:#fff;border:1px solid var(--line);border-top:8px solid var(--c);border-radius:8px;padding:26px;display:grid;grid-template-columns:auto 1fr;gap:26px}
+.panel{background:#fff;border:1px solid var(--line);border-top:8px solid var(--c);border-radius:8px;padding:26px;display:grid;grid-template-columns:auto 1fr;gap:26px;box-shadow:0 6px 20px rgba(0,0,0,0.05)}
 .panel .big{font-family:'Barlow Condensed';font-weight:800;font-size:7rem;line-height:.9;color:var(--c)}
 .panel h3{font-size:1.8rem;font-weight:700;margin-bottom:10px}
 .panel dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;font-size:.98rem;margin-bottom:14px}
@@ -111,7 +143,7 @@ nav a.l:hover{color:var(--red)}
 .steps div{border-left:4px solid var(--red);padding-left:12px;font-size:.92rem}
 .steps b{font-family:'Barlow Condensed';font-size:2.2rem;color:var(--red);display:block;line-height:1}
 
-.prod{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.prod{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
 .prod img{width:100%;height:190px;object-fit:contain;background:#f4f2ef;padding:12px}
 .prod div{padding:18px;display:flex;flex-direction:column;gap:8px;flex-grow:1}
 .prod h3{font-size:1.45rem;font-weight:700}
@@ -122,7 +154,7 @@ nav a.l:hover{color:var(--red)}
 .pdf iframe{width:100%;height:100%;border:0}
 
 .search{width:100%;max-width:480px;padding:13px 16px;font:inherit;border:2px solid var(--ink);border-radius:6px;margin-bottom:24px;background:#fff}
-.wk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.wk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
 .wh{display:flex;gap:14px;align-items:center;margin-bottom:10px}
 .wh img{width:72px;height:72px;border-radius:50%;border:3px solid var(--red);object-fit:cover;background:#eee}
 .wk h3{font-size:1.25rem;font-weight:700;text-transform:uppercase}
@@ -180,17 +212,17 @@ footer{background:var(--ink);color:#bbb;text-align:center;padding:26px 20px;font
   <a class="btn btn-g" href="https://wa.me/593988257080" target="_blank" rel="noopener"><svg class="i"><use href="#chat"/></svg>WhatsApp</a>
 </div></nav>
 
-<!-- SECCIÓN INICIO ESTILO IMAGEN -->
+<!-- SECCIÓN INICIO CON BANDERAS ENLAZADAS Y FONDO ANIMADO -->
 <header class="hero">
   <div class="wrap hero-grid">
     
-    <!-- Columna 1: Banderas -->
+    <!-- Columna 1: Banderas con enlaces directos de Wikimedia Commons -->
     <div class="hero-flags">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Bandera_Provincia_Santo_Domingo_de_los_Ts%C3%A1chilas.svg/320px-Bandera_Provincia_Santo_Domingo_de_los_Ts%C3%A1chilas.svg.png" alt="Bandera Santo Domingo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/320px-Flag_of_Ecuador.svg.png" alt="Bandera Ecuador">
+      <img src="https://upload.wikimedia.com/wikipedia/commons/thumb/1/18/Bandera_Provincia_Santo_Domingo_de_los_Ts%C3%A1chilas.svg/320px-Bandera_Provincia_Santo_Domingo_de_los_Ts%C3%A1chilas.svg.png" alt="Bandera Santo Domingo"[cite: 7]>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/320px-Flag_of_Ecuador.svg.png" alt="Bandera Ecuador"[cite: 7]>
     </div>
 
-    <!-- Columna 2: Cuadro Blanco y Textos -->
+    <!-- Columna 2: Cuadro Central Blanco y Contenidos -->
     <div class="hero-center">
       <div class="hero-white-box">
         <img src="logo-ateseg.jpg" alt="ATESEG Logo" onerror="this.src='https://via.placeholder.com/320x100?text=ATESEG'">
@@ -204,9 +236,10 @@ footer{background:var(--ink);color:#bbb;text-align:center;padding:26px 20px;font
       </div>
     </div>
 
-    <!-- Columna 3: Extintor Derecha -->
+    <!-- Columna 3: Extintor Destacado HD -->
     <div class="hero-extinguisher">
       <img src="extintor-pqs.jpg" alt="Extintor ATESEG" onerror="this.src='https://via.placeholder.com/200x350?text=Extintor'">
+      <div class="ext-caption">Equipos Certificados</div>
     </div>
 
   </div>
