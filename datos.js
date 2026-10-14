@@ -58,7 +58,7 @@ const trabajadores = [
     },
     {
         nombre: "LINCOLN FAJARDO",
-        cargo: "SYSTEM TESTER MARKETING",
+        cargo: "SYSTEM MARKETING",
         edad: "25 años",
         area: "ADMINISTRACIÓN",
         activo: true,
@@ -102,10 +102,10 @@ const trabajadores = [
         ficha: "ficha_jhonathan.pdf"
     },
     {
-        nombre: "CONTADORA",
+        nombre: "ING. SUSANA CHAMBA",
         cargo: "CONTADORA",
-        edad: "42 años",
-        area: "ADMINISTRACION",
+        edad: "59 años",
+        area: "ADMINISTRACIÓN",
         activo: true,
         foto: "contadora.jpg",
         ficha: "ficha_contadora.pdf"
