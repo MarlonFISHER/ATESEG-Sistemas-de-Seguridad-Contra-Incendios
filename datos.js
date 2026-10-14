@@ -100,7 +100,7 @@ const trabajadores = [
         activo: true,
         foto: "jhonathan.jpg",
         ficha: "ficha_jhonathan.pdf"
-    }
+    },
     {
         nombre: "CONTADORA",
         cargo: "CONTADORA",
