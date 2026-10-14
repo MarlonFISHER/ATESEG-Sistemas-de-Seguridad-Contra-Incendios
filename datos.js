@@ -110,4 +110,13 @@ const trabajadores = [
         foto: "contadora.jpg",
         ficha: "ficha_contadora.pdf"
     },
+    {
+        nombre: "EFREN VARELA",
+        cargo: "TECNICO INDSTRIAL",
+        edad: "35 años",
+        area: "OPERADOR",
+        activo: true,
+        foto: "efren.jpg",
+        ficha: "ficha_efren.pdf"
+    },
 ];
