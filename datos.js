@@ -49,7 +49,7 @@ const trabajadores = [
     },
     {
         nombre: "ALFONSO TAPIA",
-        cargo: "TÉCNICO INSTALADOR",
+        cargo: "SUPERVISOR",
         edad: "26 años",
         area: "OPERADOR",
         activo: true,
@@ -58,7 +58,7 @@ const trabajadores = [
     },
     {
         nombre: "LINCOLN FAJARDO",
-        cargo: "MARKETING",
+        cargo: "SYSTEM TESTER MARKETING",
         edad: "25 años",
         area: "ADMINISTRACIÓN",
         activo: true,
@@ -101,4 +101,13 @@ const trabajadores = [
         foto: "jhonathan.jpg",
         ficha: "ficha_jhonathan.pdf"
     }
+    {
+        nombre: "CONTADORA",
+        cargo: "CONTADORA",
+        edad: "42 años",
+        area: "ADMINISTRACION",
+        activo: true,
+        foto: "contadora.jpg",
+        ficha: "ficha_contadora.pdf"
+    },
 ];
