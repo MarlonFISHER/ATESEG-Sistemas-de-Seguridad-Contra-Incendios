@@ -107,7 +107,7 @@ const trabajadores = [
         edad: "59 años",
         area: "ADMINISTRACIÓN",
         activo: true,
-        foto: "contadora.jpg",
+        foto: "susana.jpg",
         ficha: "ficha_contadora.pdf"
     },
     {
